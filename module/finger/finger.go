@@ -9,7 +9,6 @@ import (
 	"os"
 	"strings"
 	"sync"
-	"time"
 )
 
 type Outrestul struct {
@@ -116,9 +115,6 @@ func (s *FinScan) fingerScan() {
 			}
 			headers := MapToJson(data.header)
 			var cms []string
-			//print the current time(second)
-			currentTime := time.Now().UnixMilli()
-			fmt.Println("[0][Time-started]Current time (seconds):", currentTime)
 			for _, finp := range s.Finpx.Fingerprint {
 				if finp.Location == "body" {
 					if finp.Method == "keyword" {
@@ -164,10 +160,6 @@ func (s *FinScan) fingerScan() {
 			}
 			cms = RemoveDuplicatesAndEmpty(cms)
 			cmss := strings.Join(cms, ",")
-			//print the current time(second)
-			endTime := time.Now().UnixMilli()
-			fmt.Println("[1][Time-end]Current time (seconds):", endTime)
-			fmt.Println("[消费]time used seconds:", endTime-currentTime)
 			out := Outrestul{data.url, cmss, data.server, data.statuscode, data.length, data.title, data.ip}
 			s.AllResult = append(s.AllResult, out)
 			if len(out.Cms) != 0 {
