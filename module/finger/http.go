@@ -2,9 +2,9 @@ package finger
 
 import (
 	"crypto/tls"
-	"fmt"
 	"io/ioutil"
 	"math/rand"
+	"net"
 	"net/http"
 	"net/url"
 	"strings"
@@ -122,8 +122,16 @@ func httprequest(url1 []string, proxy string) (*resps, error) {
 	httpbody = toUtf8(httpbody, contentType)
 	title := gettitle(httpbody)
 	//get ip
-	remoteIP := resp.Request.RemoteAddr
-	fmt.Println(remoteIP)
+	/* 只能通过DNS解析获取到web服务器的连接ip
+
+	ps: 通过resp，获取不到web服务器的连接ip
+	*/
+	host := resp.Request.URL.Host
+	remoteIPs, err := net.LookupHost(host)
+	if err != nil {
+		remoteIPs = []string{""}
+	}
+	remoteIP := strings.Join(remoteIPs, ",")
 
 	httpheader := resp.Header
 	var server string

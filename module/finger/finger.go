@@ -167,7 +167,7 @@ func (s *FinScan) fingerScan() {
 				color.RGBStyleFromString("237,64,35").Println(outstr)
 				s.FocusResult = append(s.FocusResult, out)
 			} else {
-				outstr := fmt.Sprintf("[ %s | %s | %s | %d | %d | %s ]", out.Url, out.Cms, out.Server, out.Statuscode, out.Length, out.Title)
+				outstr := fmt.Sprintf("[ %s | %s | %s | %d | %d | %s | %s ]", out.Url, out.Cms, out.Server, out.Statuscode, out.Length, out.Title, out.Ip)
 				fmt.Println(outstr)
 			}
 		default:
