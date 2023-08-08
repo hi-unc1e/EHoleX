@@ -131,6 +131,10 @@ func httprequest(url1 []string, proxy string) (*resps, error) {
 	if err != nil {
 		remoteIPs = []string{""}
 	}
+	if len(remoteIPs) > 2 {
+		//minify to 2
+		remoteIPs = remoteIPs[:2]
+	}
 	remoteIP := strings.Join(remoteIPs, ",")
 
 	httpheader := resp.Header

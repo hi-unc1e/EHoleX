@@ -163,7 +163,8 @@ func (s *FinScan) fingerScan() {
 			out := Outrestul{data.url, cmss, data.server, data.statuscode, data.length, data.title, data.ip}
 			s.AllResult = append(s.AllResult, out)
 			if len(out.Cms) != 0 {
-				outstr := fmt.Sprintf("[ %s | %s | %s | %d | %d | %s ]", out.Url, out.Cms, out.Server, out.Statuscode, out.Length, out.Title)
+				// 重点资产
+				outstr := fmt.Sprintf("[ %s | %s | %s | %d | %d | %s | %s ]", out.Url, out.Cms, out.Server, out.Statuscode, out.Length, out.Title, out.Ip)
 				color.RGBStyleFromString("237,64,35").Println(outstr)
 				s.FocusResult = append(s.FocusResult, out)
 			} else {
