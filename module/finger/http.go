@@ -99,10 +99,14 @@ func httprequest(url1 []string, proxy string) (*resps, error) {
 		Timeout:   10 * time.Second,
 		Transport: transport,
 	}
-	req, err := http.NewRequest("GET", url1[0], nil)
-	if err != nil {
-		return nil, err
-	}
+	url := url1[0]
+	var req *http.Request
+	var reqUrl string
+
+	// add `https://`
+	reqUrl = getUrlWithProto(url)
+
+	req, _ = http.NewRequest("GET", reqUrl, nil)
 	cookie := &http.Cookie{
 		Name:  "rememberMe",
 		Value: "me",
@@ -156,7 +160,28 @@ func httprequest(url1 []string, proxy string) (*resps, error) {
 	} else {
 		jsurl = []string{""}
 	}
-	favhash := getfavicon(httpbody, url1[0])
-	s := resps{url1[0], httpbody, resp.Header, server, resp.StatusCode, len(httpbody), title, jsurl, favhash, remoteIP}
+	favhash := getfavicon(httpbody, reqUrl)
+	s := resps{reqUrl, httpbody, resp.Header, server, resp.StatusCode, len(httpbody), title, jsurl, favhash, remoteIP}
 	return &s, nil
+}
+
+func getUrlWithProto(url string) string {
+	var reqUrl string
+	if strings.Contains(url, "//") {
+		reqUrl = url
+	} else {
+		if strings.Contains(url, "443") {
+			reqUrl = "https://" + url
+		}
+		if strings.Contains(url, "80") {
+			reqUrl = "http://" + url
+		}
+		if !strings.Contains(url, ":") {
+			reqUrl = "http://" + url
+		} else {
+			// 默认全部走https
+			reqUrl = "https://" + url
+		}
+	}
+	return reqUrl
 }

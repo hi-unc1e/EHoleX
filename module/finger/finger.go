@@ -5,10 +5,11 @@ import (
 	"ehole/module/queue"
 	"encoding/json"
 	"fmt"
-	"github.com/gookit/color"
 	"os"
 	"strings"
 	"sync"
+
+	"github.com/gookit/color"
 )
 
 type Outrestul struct {
