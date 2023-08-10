@@ -3634,7 +3634,14 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["JeecgBoot","polyfill_"]
-    }, {
+    },
+    {
+        "cms": "JeeCG",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["LoginController.do", "login"]
+    },
+    {
         "cms": "帆软数据决策系统",
         "method": "keyword",
         "location": "body",
@@ -36156,16 +36163,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["DirectAdmin Daemon"]
-        }, {
-            "cms": "Docker_Daemon",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Content-Length:19"]
-        }, {
-            "cms": "Docker_Daemon",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["text/plain"]
         }, {
             "cms": "CouchDB",
             "method": "keyword",
