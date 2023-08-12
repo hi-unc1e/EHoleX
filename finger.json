@@ -3682,7 +3682,7 @@
         "location": "body",
         "keyword": ["wp-","wp-content/themes/"]
      }, {
-        "cms": "金合OA",
+        "cms": "金和OA",
         "method": "keyword",
         "location": "body",
         "keyword": ["Jhsoft.Web.login","PassWord.aspx"]
@@ -33173,12 +33173,7 @@
             "method": "keyword",
             "location": "body",
             "keyword": ["ColdFusion.Ajax"]
-        }, {
-            "cms": "Adobe ColdFusion",
-            "method": "keyword",
-            "location": "body",
-            "keyword": ["cdm"]
-        }, {
+        },{
             "cms": "Jirafe",
             "method": "keyword",
             "location": "body",
@@ -35243,12 +35238,7 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["ci_session"]
-        }, {
-            "cms": "ColdFusion",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["CFTOKEN"]
-        }, {
+        },  {
             "cms": "WebObjects",
             "method": "keyword",
             "location": "header",
