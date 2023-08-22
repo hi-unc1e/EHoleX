@@ -1,4 +1,10 @@
 # EHole(棱洞)3.0 红队重点攻击系统指纹探测工具
+## Build command
+```
+go build -ldflags="-s -w " -trimpath -o ehole.exe
+```
+
+
 
 ![Author](https://img.shields.io/badge/Author-shihuang-green)  ![language](https://img.shields.io/badge/language-Golang-green) ![version](https://img.shields.io/badge/version-2.0-brightgreen)
 
