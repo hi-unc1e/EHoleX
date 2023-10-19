@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/qax-os/excelize"
+	"github.com/360EntSecGroup-Skylar/excelize"
 )
 
 func outjson(filename string, data []byte) {
