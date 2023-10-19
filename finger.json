@@ -20853,7 +20853,7 @@
         "location": "body",
         "keyword": ["href=\"upvalidatefile.aspx"]
     }, {
-        "cms": "Seeyon",
+        "cms": "致远OA",
         "method": "keyword",
         "location": "body",
         "keyword": ["href=\"/seeyon/common/images/"]
@@ -26413,7 +26413,7 @@
         "location": "body",
         "keyword": ["name=\"generator\" content=\"wordpress ", "/wp-includes/"]
     }, {
-        "cms": "Yonyou-Seeyon-OA",
+        "cms": "Yonyou-致远OA",
         "method": "keyword",
         "location": "body",
         "keyword": ["/seeyon/user-data/images/login/login.gif", "a6-v5企业版", "seeyon", "seeyonproductid", "/seeyon/common/", "var _ctxpath = '/seeyon'", "a8-v5企业版", "/seeyon/"]
