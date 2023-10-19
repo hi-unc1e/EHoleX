@@ -1,3 +1,4 @@
+project_name: eHole
 before:
   hooks:
     - sudo apt -y install libprotobuf-dev protobuf-compiler protoc-gen-go
