@@ -1,2 +1,4 @@
 go_build_ehole
 dist
+ehole.exe
+ehole
