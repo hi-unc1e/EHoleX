@@ -4,6 +4,8 @@
 go build -ldflags="-s -w " -trimpath -o ehole.exe
 ```
 
+## 二开版本
+- 增加了IP字段
 
 
 ![Author](https://img.shields.io/badge/Author-shihuang-green)  ![language](https://img.shields.io/badge/language-Golang-green) ![version](https://img.shields.io/badge/version-2.0-brightgreen)
